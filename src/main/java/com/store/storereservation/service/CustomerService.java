@@ -27,7 +27,6 @@ public class CustomerService {
         if (customerRepository.findByEmail(form.getEmail().toLowerCase(Locale.ROOT)).isPresent()) {
             throw new CustomException(ErrorCode.ALREADY_REGISTER_USER);
         }else{
-            LocalDateTime now = LocalDateTime.now();
             return customerRepository.save(Customer.from(form));
         }
 
@@ -42,7 +41,13 @@ public class CustomerService {
     }
 
 
-
+    /**
+     *
+     * 아래 메소드들은 추루 토큰 구현을 위해 작성해둠
+     *
+     * @param form
+     * @return
+     */
 
     public String customerLoginToken(CustomerSignUpForm form) {
         // 1 로그인 가능여부

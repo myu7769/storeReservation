@@ -15,10 +15,24 @@ public class StoreController {
 
     private final StoreService storeService;
 
+    /**
+     * 회원 가입된 파트너 계정이 확인됐을 경우 store 등록이 가능
+     * 
+     * @param form
+     * @return
+     */
+    
     @PostMapping("/register")
     public ResponseEntity<Store> storeRegister(@RequestBody StoreRegisterForm form) {
         return ResponseEntity.ok(storeService.storeRegister(form));
     }
+
+    /**
+     * 파트너 계정으로 store 삭제 가능
+     * 
+     * @param form
+     * @return
+     */
 
     @DeleteMapping("/delete")
     public ResponseEntity<String> storeDelete(@RequestBody StoreDeleteForm form) {

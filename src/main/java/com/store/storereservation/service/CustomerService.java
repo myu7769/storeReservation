@@ -35,7 +35,9 @@ public class CustomerService {
 
     public Optional<Customer> customerSignIn(String email, String password) {
             return customerRepository.findByEmail(email)
-                    .stream().filter(customer -> customer.isVerify() && customer.getPassword().equals(password))
+                    .stream().filter(customer ->
+//                            customer.isVerify() &&
+                                    customer.getPassword().equals(password))
                     .findFirst();
     }
 
@@ -56,7 +58,9 @@ public class CustomerService {
 
     private Optional<Customer> finalValidCustomer(String email, String password) {
         return customerRepository.findByEmail(email)
-                .stream().filter(customer -> customer.isVerify() && customer.getPassword().equals(password))
+                .stream().filter(customer ->
+//                        customer.isVerify() &&
+                                customer.getPassword().equals(password))
                 .findFirst();
     }
 }

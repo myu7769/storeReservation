@@ -18,7 +18,6 @@ public class ExceptionController {
             CustomException.class
     })
     public ResponseEntity<ExceptionResponse> customRequestException(final CustomException customException) {
-        log.warn("api Exception : {} ", customException.getErrorCode());
         return ResponseEntity.badRequest().body(new ExceptionResponse(customException.getMessage(), customException.getErrorCode()));
     }
 

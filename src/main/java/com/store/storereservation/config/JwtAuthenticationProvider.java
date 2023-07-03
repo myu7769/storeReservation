@@ -11,6 +11,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 import java.util.Date;
 
+
 public class JwtAuthenticationProvider {
     private String secretkey = "secretKey";
     private long tokenValidTime = 1000L * 60 * 60 * 24;

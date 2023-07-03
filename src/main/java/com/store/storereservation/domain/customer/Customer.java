@@ -25,16 +25,11 @@ public class Customer extends BaseEntity {
     private String name;
     private String password;
 
-    private LocalDateTime verifyExpiredAt;
-    private String verificationCode;
-    private boolean verify;
-
     public static Customer from(CustomerSignUpForm form) {
         return Customer.builder()
                 .email(form.getEmail().toLowerCase(Locale.ROOT))
                 .password(form.getPassword())
                 .name(form.getName())
-                .verify(false)
                 .build();
     }
 }
